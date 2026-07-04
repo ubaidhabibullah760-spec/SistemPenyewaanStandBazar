@@ -96,8 +96,33 @@ public class PenyewaBeraksi {
     break;
 
                 case 3:
-                    System.out.println("Menu Cari Penyewa");
-                    break;
+
+    input.nextLine();
+
+    System.out.print("Masukkan nama penyewa yang dicari : ");
+    String cariNama = input.nextLine();
+
+    boolean ditemukan = false;
+
+    for (int i = 0; i < jumlahPenyewa; i++) {
+
+        if (daftarPenyewa[i].getNama().equalsIgnoreCase(cariNama)) {
+
+            System.out.println("\n===== DATA PENYEWA DITEMUKAN =====");
+            System.out.println(daftarPenyewa[i].displayInfo());
+
+            ditemukan = true;
+            break;
+
+        }
+
+    }
+
+    if (!ditemukan) {
+        System.out.println("Data penyewa tidak ditemukan.");
+    }
+
+    break;
 
                 case 4:
                     System.out.println("Menu Edit Penyewa");
