@@ -209,8 +209,19 @@ public class PenyewaBeraksi {
     break;
 
                 case 6:
-                    System.out.println("Menu Info Stand");
-                    break;
+
+    int totalStand = daftarPenyewa.length;
+    int standTerisi = jumlahPenyewa;
+    int standKosong = totalStand - standTerisi;
+
+    System.out.println("\n==============================");
+    System.out.println("       INFO STAND BAZAR");
+    System.out.println("==============================");
+    System.out.println("Total Stand      : " + totalStand);
+    System.out.println("Stand Terisi     : " + standTerisi);
+    System.out.println("Stand Kosong     : " + standKosong);
+
+    break;
 
                 case 7:
                     System.out.println("Terima kasih.");
