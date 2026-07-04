@@ -125,8 +125,54 @@ public class PenyewaBeraksi {
     break;
 
                 case 4:
-                    System.out.println("Menu Edit Penyewa");
-                    break;
+
+    input.nextLine();
+
+    System.out.print("Masukkan nama penyewa yang akan diedit : ");
+    String editNama = input.nextLine();
+
+    boolean edit = false;
+
+    for (int i = 0; i < jumlahPenyewa; i++) {
+
+        if (daftarPenyewa[i].getNama().equalsIgnoreCase(editNama)) {
+
+            System.out.println("\n===== EDIT DATA =====");
+
+            System.out.print("Nama Baru : ");
+            daftarPenyewa[i].setNama(input.nextLine());
+
+            System.out.print("NIK Baru : ");
+            daftarPenyewa[i].setNik(input.nextLine());
+
+            System.out.print("No HP Baru : ");
+            daftarPenyewa[i].setNoHP(input.nextLine());
+
+            System.out.print("Jenis Usaha Baru : ");
+            daftarPenyewa[i].setJenisUsaha(input.nextLine());
+
+            System.out.print("Nomor Stand Baru : ");
+            daftarPenyewa[i].setNomorStand(input.nextInt());
+            input.nextLine();
+
+            System.out.print("Status Pembayaran Baru : ");
+            daftarPenyewa[i].setStatusPembayaran(input.nextLine());
+
+            System.out.println("\nData berhasil diperbarui.");
+
+            edit = true;
+
+            break;
+
+        }
+
+    }
+
+    if (!edit) {
+        System.out.println("Data penyewa tidak ditemukan.");
+    }
+
+    break;
 
                 case 5:
                     System.out.println("Menu Hapus Penyewa");
